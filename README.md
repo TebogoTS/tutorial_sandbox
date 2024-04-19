@@ -17,11 +17,11 @@ Before you start, make sure you have the following installed:
 
 ```
 /project-root
-|-- api
+|-- application
 |   |-- Dockerfile
 |   |-- app.py
 |   |-- requirements.txt
-|-- db
+|-- database
 |   |-- Dockerfile
 |   |-- schema.sql
 |-- kubernetes
