@@ -25,10 +25,10 @@ Before you start, make sure you have the following installed:
 |   |-- Dockerfile
 |   |-- schema.sql
 |-- kubernetes
-    |-- api-deployment.yaml
-    |-- api-service.yaml
-    |-- db-deployment.yaml
-    |-- db-service.yaml
+    |-- application-deployment.yaml
+    |-- application-service.yaml
+    |-- mysql-deployment.yaml
+    |-- mysql-service.yaml
 |-- README.md
 ```
 
