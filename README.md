@@ -38,19 +38,19 @@ Before you start, make sure you have the following installed:
 
 1. **Build the Python API Container**
 
-   Navigate to the `api` directory and build the Docker image:
+   Navigate to the `application` directory and build the Docker image:
 
    ```bash
-   cd api
+   cd application
    docker build -t python-api:latest .
    ```
 
 2. **Build the MySQL Database Container**
 
-   Navigate to the `db` directory and build the Docker image:
+   Navigate to the `database` directory and build the Docker image:
 
    ```bash
-   cd ../db
+   cd ../database
    docker build -t mysql-custom:latest .
    ```
 
