@@ -59,15 +59,15 @@ Before you start, make sure you have the following installed:
 1. **Create the MySQL Deployment and Service**
 
    ```bash
-   kubectl apply -f ../kubernetes/db-deployment.yaml
-   kubectl apply -f ../kubernetes/db-service.yaml
+   kubectl apply -f ../kubernetes/mysql-deployment.yaml
+   kubectl apply -f ../kubernetes/mysql-service.yaml
    ```
 
 2. **Create the Python API Deployment and Service**
 
    ```bash
-   kubectl apply -f ../kubernetes/api-deployment.yaml
-   kubectl apply -f ../kubernetes/api-service.yaml
+   kubectl apply -f ../kubernetes/application-deployment.yaml
+   kubectl apply -f ../kubernetes/application-service.yaml
    ```
 
 ### Accessing the Services
