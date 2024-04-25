@@ -1,0 +1,22 @@
+api:
+  name: python-api
+  replicaCount: 1
+  image:
+    repository: mahlomojats/python-api
+    tag: latest
+  port: 5000
+  dbHost: mysql-service
+  dbUser: root
+  dbPassword: password
+  dbDatabase: people_db
+  serviceName: python-api-service
+  servicePort: 5000
+
+mysql:
+  name: mysql
+  replicaCount: 1
+  image:
+    repository: mahlomojats/sample-mysql
+    tag: latest
+  rootPassword: password
+  serviceName: mysql-service
