@@ -99,3 +99,25 @@ Before you start, make sure you have the following installed:
 - The `kubectl port-forward` command is intended for development and testing environments only.
 
 ---
+
+## Build and Start Services:
+
+### Directory Structure
+Ensure your directory structure looks like this:
+
+```arduino
+tutorial_sandbox/
+├── application/
+│   ├── Dockerfile
+│   ├── app.py
+│   ├── requirements.txt
+├── database/
+│   ├── Dockerfile
+│   ├── schema.sql
+├── fluent-bit.conf
+└── docker-compose.yml
+```
+
+```bash
+docker-compose up --build
+```
