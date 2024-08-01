@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./application
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_ENV: development
+      DATABASE_URI: postgresql://postgres:postgres@database:5432/postgres
+    depends_on:
+      - database
+      - fluent-bit
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: 127.0.0.1:24224
+        tag: web
+
+  database:
+    build: ./database
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  fluent-bit:
+    image: fluent/fluent-bit:latest
+    ports:
+      - "24224:24224"
+      - "2020:2020"
+    volumes:
+      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+    command: /fluent-bit/bin/fluent-bit -c /fluent-bit/etc/fluent-bit.conf
+
+volumes:
+  db-data:
+  fluent-bit:
